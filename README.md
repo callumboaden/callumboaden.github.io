@@ -9,7 +9,8 @@ index.html
 styles.css
 script.js
 README.md
-assets/
+  assets/
+  base12-dashboard.webp
   callum-boaden-resume.pdf
   nexstand.webp
   waterwell.webp
