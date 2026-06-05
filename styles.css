@@ -35,6 +35,13 @@ img {
   height: auto;
 }
 
+.skill-symbols {
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}
+
 a {
   color: inherit;
 }
@@ -249,6 +256,24 @@ h3 {
   box-shadow: var(--shadow);
 }
 
+.profile-photo {
+  display: grid;
+  place-items: end center;
+  width: min(100%, 216px);
+  aspect-ratio: 1;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.profile-photo img {
+  width: 118%;
+  max-width: none;
+  transform: translateY(4%);
+}
+
 .panel-label {
   margin-bottom: 22px;
   font-size: 1.28rem;
@@ -328,6 +353,35 @@ h3 {
   padding: clamp(20px, 3vw, 28px);
 }
 
+.skill-group h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-heading-icon {
+  flex: 0 0 auto;
+  width: 1.05em;
+  height: 1.05em;
+  color: var(--skill-heading-icon-color, var(--accent));
+}
+
+.skill-group h3[data-icon="code"] {
+  --skill-heading-icon-color: var(--accent);
+}
+
+.skill-group h3[data-icon="storefront"] {
+  --skill-heading-icon-color: var(--rust);
+}
+
+.skill-group h3[data-icon="megaphone"] {
+  --skill-heading-icon-color: var(--gold);
+}
+
+.skill-group h3[data-icon="tools"] {
+  --skill-heading-icon-color: var(--accent-dark);
+}
+
 .tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -338,12 +392,131 @@ h3 {
 }
 
 .tag-list li {
-  padding: 7px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 7px 10px 7px 9px;
   color: #314044;
   background: var(--panel-soft);
   border: 1px solid var(--line);
   border-radius: 999px;
   font-size: 0.92rem;
+  line-height: 1.2;
+}
+
+.tag-icon {
+  flex: 0 0 auto;
+  width: 1em;
+  height: 1em;
+  color: var(--skill-icon-color, var(--accent));
+}
+
+.tag-list li[data-icon="html"] {
+  --skill-icon-color: #e34f26;
+}
+
+.tag-list li[data-icon="css"] {
+  --skill-icon-color: #1572b6;
+}
+
+.tag-list li[data-icon="javascript"] {
+  --skill-icon-color: #b88a00;
+}
+
+.tag-list li[data-icon="responsive"],
+.tag-list li[data-icon="code-review"],
+.tag-list li[data-icon="debugging"],
+.tag-list li[data-icon="testing"],
+.tag-list li[data-icon="terminal"],
+.tag-list li[data-icon="dashboard"],
+.tag-list li[data-icon="automation"],
+.tag-list li[data-icon="docs"] {
+  --skill-icon-color: var(--accent);
+}
+
+.tag-list li[data-icon="react"] {
+  --skill-icon-color: #087ea4;
+}
+
+.tag-list li[data-icon="next"],
+.tag-list li[data-icon="github"],
+.tag-list li[data-icon="notion"] {
+  --skill-icon-color: #151719;
+}
+
+.tag-list li[data-icon="ai"],
+.tag-list li[data-icon="target"],
+.tag-list li[data-icon="google-ads"],
+.tag-list li[data-icon="scale"] {
+  --skill-icon-color: var(--gold);
+}
+
+.tag-list li[data-icon="wordpress"] {
+  --skill-icon-color: #21759b;
+}
+
+.tag-list li[data-icon="woocommerce"] {
+  --skill-icon-color: #7f54b3;
+}
+
+.tag-list li[data-icon="shopify"],
+.tag-list li[data-icon="liquid"] {
+  --skill-icon-color: #5f8f3f;
+}
+
+.tag-list li[data-icon="amazon"] {
+  --skill-icon-color: #b36b00;
+}
+
+.tag-list li[data-icon="marketplace"],
+.tag-list li[data-icon="product-page"],
+.tag-list li[data-icon="landing-page"],
+.tag-list li[data-icon="inventory"],
+.tag-list li[data-icon="support"],
+.tag-list li[data-icon="email"],
+.tag-list li[data-icon="write"],
+.tag-list li[data-icon="blog"],
+.tag-list li[data-icon="megaphone"],
+.tag-list li[data-icon="storefeeder"],
+.tag-list li[data-icon="shiphero"],
+.tag-list li[data-icon="usa-sales"],
+.tag-list li[data-icon="webbee"],
+.tag-list li[data-icon="goaffpro"] {
+  --skill-icon-color: var(--rust);
+}
+
+.tag-list li[data-icon="search"] {
+  --skill-icon-color: var(--accent-dark);
+}
+
+.tag-list li[data-icon="postgresql"] {
+  --skill-icon-color: #336791;
+}
+
+.tag-list li[data-icon="prisma"] {
+  --skill-icon-color: #2d3748;
+}
+
+.tag-list li[data-icon="omnisend"] {
+  --skill-icon-color: #2563eb;
+}
+
+.tag-list li[data-icon="make"] {
+  --skill-icon-color: #6d28d9;
+}
+
+.tag-list li[data-icon="figma"] {
+  --skill-icon-color: #f24e1e;
+}
+
+.tag-list li[data-icon="canva"] {
+  --skill-icon-color: #008f97;
+}
+
+.tag-list li[data-icon="affinity-designer"],
+.tag-list li[data-icon="affinity-photo"] {
+  --skill-icon-color: #5546c9;
 }
 
 .work-section {
@@ -626,6 +799,10 @@ h3 {
     min-height: auto;
   }
 
+  .hero-panel {
+    max-width: 430px;
+  }
+
   .skills-grid,
   .site-grid,
   .two-column {
@@ -664,6 +841,14 @@ h3 {
   .hero-actions {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .hero-panel {
+    max-width: none;
+  }
+
+  .profile-photo {
+    width: min(100%, 204px);
   }
 
   .button {
